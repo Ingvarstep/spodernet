@@ -53,7 +53,7 @@ class DataLoaderSlave(threading.Thread):
         self.randomize = randomize
         self.num_batches = len(list(batchidx2paths.keys()))
         self.rdm = np.random.RandomState(234+seed)
-        self.shard_fractions = shard_fractions
+        self.shard_fractions = None
         self.shard2batchidx = shard2batchidx
         self.paths = paths
         self._stop = threading.Event()
